@@ -23,11 +23,11 @@ public class Calculator {
             }
             default -> System.out.println("정확한 연산자를 입력해주세요");
         }
-        resultHistory.add((double) result);
+        resultHistory.add(result);
         return result;
     }
     public List<Double> getResultHistory() {
-        return new ArrayList<>(resultHistory);  // 방어적 복사
+        return new ArrayList<>(resultHistory);
     }
 
     public void removeResult() {

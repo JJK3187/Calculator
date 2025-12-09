@@ -1,7 +1,6 @@
 package step2;
 
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -9,7 +8,7 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Calculator clac = new Calculator();
+        Calculator calc = new Calculator();
 
         while (true) {
 
@@ -37,18 +36,18 @@ public class App {
             String op = sc.next();
 
 
-            double result = clac.calculate(num1, num2, op);
+            double result = calc.calculate(num1, num2, op);
             System.out.println("결과 : " + result);
 
-            System.out.println("지금까지의 계산 결과: " + clac.getResultHistory());
+            System.out.println("지금까지의 계산 결과: " + calc.getResultHistory());
 
             System.out.println("결과를 삭제하시겠습니까? (Y/N): ");
             String delete = sc.next();
 
             if (delete.equalsIgnoreCase("Y")) {
-                clac.removeResult();
+                calc.removeResult();
                 System.out.println("결과가 삭제되었습니다.");
-                System.out.println("남은 결과: " + clac.getResultHistory());
+                System.out.println("남은 결과: " + calc.getResultHistory());
             } else {
                 System.out.println("결과가 유지됩니다.");
             }
